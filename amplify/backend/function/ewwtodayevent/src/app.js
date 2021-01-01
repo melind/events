@@ -8,11 +8,11 @@ See the License for the specific language governing permissions and limitations 
 
 
 
-
 var express = require('express')
 var bodyParser = require('body-parser')
 var awsServerlessExpressMiddleware = require('aws-serverless-express/middleware')
 const axios = require('axios')
+
 // declare a new express app
 var app = express()
 app.use(bodyParser.json())
@@ -33,7 +33,7 @@ app.use(function(req, res, next) {
 
 app.get('/:location/today', function(req, res) {
   // Add your code here
-   let location = "france"; //request.params.location;
+   let location = request.params.location;
  /*--------------get api key and the url of the  external api -------------------*/
         const API_KEY = process.env.API_KEY;
         //event of the day

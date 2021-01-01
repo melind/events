@@ -5,9 +5,9 @@ import './App.css';
 
 function App() {
   const [todayEvents, setTodayEvents] = useState([]);
-
-     async function TodayEventsList() { 
-         const TodayEventsInfo = await API.get('ewwapi', '/{location}/today')
+  const [location, setLocation] = useState("france");
+     async function TodayEventsList() {  
+         const TodayEventsInfo = await API.get('ewwapi', `/${location}/today`)
          .then(res => {
           
              return res.data.todayEvents.events.event;
