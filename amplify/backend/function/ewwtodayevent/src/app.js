@@ -32,20 +32,23 @@ app.use(function(req, res, next) {
  **********************/
 
 app.get('/:location/today', function(req, res) {
-  // Add your code here
-   let location = req.params.location;
+
+   let location = "portugal";
  /*--------------get api key and the url of the  external api -------------------*/
         const API_KEY = process.env.API_KEY;
         //event of the day
-        const todayEventsUrl = `http://api.eventful.com/json/events/search?app_key=${API_KEY}&location=${location}&date=Today`
-       
+        let todayEventsUrl = `http://api.eventful.com/json/events/search?app_key=${API_KEY}&location=${location}&date=Today`
+       if(req.apiGateway && req.apiGateway.event.queryStringParameters) {
+          location = req.apiGateway.event.queryStringParameters
+         todayEventsUrl = `http://api.eventful.com/json/events/search?app_key=${API_KEY}&location=${location}&date=Today`
+       }
        /* -------------get data of the external api---------*/
-        const todayEvents = axios.get(todayEventsUrl)
-            .then((res) =>{ return res.data})
-            .catch(err => { return res.status(500).json({ err, todayEventsUrl }); });
+            axios.get(todayEventsUrl)
+            .then((response) =>{ res.json({todayEvents: response.data}) })
+            .catch(err => { res.json({error: err}) });
         
 
-  res.json({success: 'get call succeed!', url: req.url,  todayEvents});
+ //res.json({success: 'get call succeed!', url: req.url, todayEvents});
 });
 
 app.get('/:location/today/*', function(req, res) {

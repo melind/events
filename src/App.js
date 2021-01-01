@@ -7,20 +7,22 @@ function App() {
   const [todayEvents, setTodayEvents] = useState([]);
   const [location, setLocation] = useState("france");
      async function TodayEventsList() {  
+         
          const TodayEventsInfo = await API.get('ewwapi', `/${location}/today`)
-         .then(res => {
-          
+         console.log('today : ', TodayEventsInfo, TodayEventsInfo.todayEvents.events.event )
+        // return TodayEventsInfo, TodayEventsInfo.data.events.event
+         /*.then(res => {
+            console.log('today : ' ,res.data, res.data.data.events.event )
              return res.data.todayEvents.events.event;
          })
          .catch(err => {
-
-         });
-
+           return err
+         });*/
+       
          // setting variable with the datacolected
-         setTodayEvents(TodayEventsInfo);
+         setTodayEvents(TodayEventsInfo.todayEvents.events.event);
      
      }
-
       useEffect(() => {
        TodayEventsList();
        }, []); 
@@ -41,6 +43,7 @@ function App() {
         </a>
       </header>
       <div>
+      result: 
                 {todayEvents.map((result) =>
                  <div key={result.id}> 
                      {result.title}  {result.start_time}
