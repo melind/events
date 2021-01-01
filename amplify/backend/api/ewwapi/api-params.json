@@ -1,0 +1,62 @@
+{
+    "paths": [
+        {
+            "name": "/home",
+            "lambdaFunction": "ewwhomefunction",
+            "privacy": {
+                "protected": true,
+                "auth": [
+                    "/POST",
+                    "/GET",
+                    "/PUT",
+                    "/PATCH",
+                    "/DELETE"
+                ],
+                "unauth": [
+                    "/GET"
+                ]
+            }
+        },
+        {
+            "name": "/{location}/today",
+            "lambdaFunction": "ewwtodayevent",
+            "privacy": {
+                "open": true
+            }
+        }
+    ],
+    "resourceName": "ewwapi",
+    "apiName": "ewwapi",
+    "functionArns": [
+        {
+            "lambdaFunction": "ewwhomefunction"
+        },
+        {
+            "lambdaFunction": "ewwtodayevent"
+        }
+    ],
+    "privacy": {
+        "auth": 1,
+        "unauth": 1,
+        "authRoleName": "amplify-eww-dev-01931-authRole",
+        "unAuthRoleName": "amplify-eww-dev-01931-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "ewwhomefunction",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        },
+        {
+            "category": "function",
+            "resourceName": "ewwtodayevent",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ]
+}

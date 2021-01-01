@@ -10,6 +10,11 @@
             "StackName": "amplify-eww-dev-01931",
             "StackId": "arn:aws:cloudformation:eu-west-2:269756700018:stack/amplify-eww-dev-01931/a614e9f0-4bbe-11eb-b875-061de1ed6718",
             "AmplifyAppId": "d5gavteqh7vjn"
+        },
+        "categories": {
+            "auth": {
+                "cognito567ac464": {}
+            }
         }
     },
     "prod": {
