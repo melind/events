@@ -7,7 +7,7 @@ function App() {
   const [todayEvents, setTodayEvents] = useState([]);
 
      async function TodayEventsList() { 
-         const TodayEventsInfo = await API.get('ewwtodayeventapi', '/{location}/today')
+         const TodayEventsInfo = await API.get('ewwapi', '/{location}/today')
          .then(res => {
           
              return res.data.todayEvents.events.event;

@@ -40,7 +40,7 @@ app.get('/:location/today', function(req, res) {
         const todayEventsUrl = `http://api.eventful.com/json/events/search?app_key=${API_KEY}&location=${location}&date=Today`
        
        /* -------------get data of the external api---------*/
-        const todayEvents = await axios.get(todayEventsUrl)
+        const todayEvents = axios.get(todayEventsUrl)
             .then((res) =>{ return res.data})
             .catch(err => { });
         
