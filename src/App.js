@@ -46,7 +46,7 @@ function App() {
                      {result.title}  {result.start_time}
                      {result.venue_name} {result.venue_address} 
                      {result.city_name} {result.region_name} 
-                     <Link to={`/description/${result.title}/${result.id}`}>Plus d'info</Link>
+                    
                  </div>
                  )} 
                                
