@@ -35,7 +35,7 @@ app.get('/:location/today', function(req, res) {
   // Add your code here
    let location = "france"; //request.params.location;
  /*--------------get api key and the url of the  external api -------------------*/
-      //  const API_KEY = process.env.API_KEY;
+        const API_KEY = process.env.API_KEY;
         //event of the day
         const todayEventsUrl = `http://api.eventful.com/json/events/search?app_key=${API_KEY}&location=${location}&date=Today`
        
