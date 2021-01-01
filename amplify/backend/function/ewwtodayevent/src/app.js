@@ -42,7 +42,7 @@ app.get('/:location/today', function(req, res) {
        /* -------------get data of the external api---------*/
         const todayEvents = axios.get(todayEventsUrl)
             .then((res) =>{ return res.data})
-            .catch(err => { });
+            .catch(err => { return res.status(500).json({ err }); });
         
 
   res.json({success: 'get call succeed!', url: req.url,  todayEvents});
