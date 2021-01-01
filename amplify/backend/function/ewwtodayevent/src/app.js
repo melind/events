@@ -33,7 +33,7 @@ app.use(function(req, res, next) {
 
 app.get('/:location/today', function(req, res) {
   // Add your code here
-   let location = request.params.location;
+   let location = req.params.location;
  /*--------------get api key and the url of the  external api -------------------*/
         const API_KEY = process.env.API_KEY;
         //event of the day
