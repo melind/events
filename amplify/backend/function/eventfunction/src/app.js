@@ -16,7 +16,8 @@ Amplify Params - DO NOT EDIT */
 var express = require('express')
 var bodyParser = require('body-parser')
 var awsServerlessExpressMiddleware = require('aws-serverless-express/middleware')
-
+var awsServerlessExpressMiddleware = require('aws-serverless-express/middleware')
+const axios = require('axios')
 // declare a new express app
 var app = express()
 app.use(bodyParser.json())
