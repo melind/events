@@ -4,7 +4,6 @@ import { Route, Switch, Redirect, Link} from 'react-router-dom';
 import './index.css';
 
 
-import Account from '../../containers/Account';
 import EventInfo from '../EventInfo';
 import Home from '../Home';
 import Nav from '../Nav';
@@ -46,7 +45,7 @@ const App = () => {
         <Route restricted={false} path="/:location/aujourdhui" exact component={TodayEvents}/>
         <Route restricted={false} path="/:location/semaine" exact component={WeekEvents}/>
         <Route restricted={false} path="/description/:eventName/:idEvent" exact component={EventInfo}/>
-        <Route path="/compte" exact component={Account}/>
+
         <Route restricted={false}  path="/404" exact component={NotFound}/>
           <Redirect to="/404" />
       </Switch>
