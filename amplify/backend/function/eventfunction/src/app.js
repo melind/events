@@ -8,6 +8,7 @@ See the License for the specific language governing permissions and limitations 
 
 
 /* Amplify Params - DO NOT EDIT
+	AUTH_COGNITO567AC464_USERPOOLID
 	ENV
 	REGION
 Amplify Params - DO NOT EDIT */
