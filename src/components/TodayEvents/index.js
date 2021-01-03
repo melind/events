@@ -9,7 +9,7 @@ const TodayEvents = () => {
      async function TodayEventsList() {  
          
          const TodayEventsInfo = await API.get('eventapi', `/${location}/today`)
-       
+       console.log(TodayEventsInfo)
          // setting variable with the datacolected
          setTodayEvents(TodayEventsInfo.todayEvents.events.event);
      

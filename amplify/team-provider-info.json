@@ -14,6 +14,9 @@
         "categories": {
             "auth": {
                 "cognito567ac464": {}
+            },
+            "function": {
+                "eventfunction": {}
             }
         }
     },

@@ -32,20 +32,20 @@ app.use(function(req, res, next) {
 
 
 
-app.get('/:location/today', async function(req, res) {
+app.get('/:location/today', function(req, res) {
     
-   let location = "portugal";
+        let location = "portugal";
  /*--------------get api key and the url of the  external api -------------------*/
         const API_KEY = process.env.API_KEY;
         //event of the day
-       // let todayEventsUrl = `http://api.eventful.com/json/events/search?app_key=${API_KEY}&location=${location}&date=Today`;
+        let todayEventsUrl = `http://api.eventful.com/json/events/search?app_key=${API_KEY}&location=${location}&date=Today`;
       
-       if(req.apiGateway && req.apiGateway.event.queryStringParameters) {
-          location = req.apiGateway.event.queryStringParameters
-         todayEventsUrl = `http://api.eventful.com/json/events/search?app_key=${API_KEY}&location=${location}&date=Today`;
-       }
+        if(req.apiGateway && req.apiGateway.event.pathParameters) {
+           location = req.apiGateway.event.pathParameters.location
+          todayEventsUrl = `http://api.eventful.com/json/events/search?app_key=${API_KEY}&location=${location}&date=Today`;
+        }
        /* -------------get data of the external api---------*/
-           await axios.get(todayEventsUrl)
+           axios.get(todayEventsUrl)
             .then((response) =>{ res.json({todayEvents: response.data}) })
             .catch(err => { res.json({error: err}) });
        
@@ -54,49 +54,41 @@ app.get('/:location/today', async function(req, res) {
 
 
 app.get('/:location/week', async function(req, res) {
-  try { 
-    let location = req.apiGateway.event.queryStringParameter.location
-  }
 
-  await   axios.get( `http://api.eventful.com/json/events/search?app_key=${API_KEY}&location=${location}&date=this+week`)
+        let location = "portugal";
+ /*--------------get api key and the url of the  external api -------------------*/
+        const API_KEY = process.env.API_KEY;
+        //event of the day
+         let weekEventsUrl = `http://api.eventful.com/json/events/search?app_key=${API_KEY}&location=${location}&date=this+week`;
+         if(req.apiGateway && req.apiGateway.event.pathParameters) {
+           
+            location = req.apiGateway.event.pathParameters.location
+            weekEventsUrl = `http://api.eventful.com/json/events/search?app_key=${API_KEY}&location=${location}&date=this+week`;
+         }
+       /* -------------get data of the external api---------*/
+            axios.get(weekEventsUrl)
             .then((response) =>{ res.json({ weekEvents: response.data}) })
-            //.catch(err => { res.json({error: err}) });
-
-    catch (err) {res.json({err: err})}
-    
- //  let location = "portugal";
- ///*--------------get api key and the url of the  external api -------------------*/
- //       const API_KEY = process.env.API_KEY;
- //       //event of the day
- //        let weekEventsUrl = `http://api.eventful.com/json/events/search?app_key=${API_KEY}&location=${location}&date=this+week`;
- //      if(req.apiGateway && req.apiGateway.event.queryStringParameters) {
- //        console.log('param ',req.apiGateway.event.queryStringParameters)
- //         location = req.apiGateway.event.queryStringParameters
- //         weekEventsUrl = `http://api.eventful.com/json/events/search?app_key=${API_KEY}&location=${location}&date=this+week`;
- //      }
- //      /* -------------get data of the external api---------*/
- //           axios.get(weekEventsUrl)
- //           .then((response) =>{ res.json({ weekEvents: response.data}) })
- //           .catch(err => { res.json({error: err}) });
- //       
+            .catch(err => { res.json({error: err}) });
+        
 });
 
 
 app.get('/description/:eventName/:idEvent', function(req, res) {
-     let idEvent = "000";
+    
   /*--------------get api key and the url of the  external api -------------------*/
         const API_KEY = process.env.API_KEY;
         //event of the day
+        
+        if(req.apiGateway && req.apiGateway.event.pathParameters) {
+         
+         let idEvent = req.apiGateway.event.pathParameters.idEvent
          let eventsInfoUrl =  `http://api.eventful.com/json/events/get?app_key=${API_KEY}&id=${idEvent}`;
-/*if(req.apiGateway && req.apiGateway.event.queryStringParameters) {
-         console.log('param ',req.apiGateway.event.queryStringParameters)
-          idEvent = req.apiGateway.event.queryStringParameters
-         let eventsInfoUrl =  `http://api.eventful.com/json/events/get?app_key=${API_KEY}&id=${idEvent}`;
-       }*/
+       
        /* -------------get data of the external api---------*/
             axios.get(eventsInfoUrl)
             .then((response) =>{ res.json({ eventsInfo: response.data}) })
             .catch(err => { res.json({error: err}) });
+        }
 });
 
 
