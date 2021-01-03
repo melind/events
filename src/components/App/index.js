@@ -7,8 +7,8 @@ import './index.css';
 import EventInfo from '../EventInfo';
 import Home from '../Home';
 import Nav from '../Nav';
+import NotFound from '../NotFound';
 import TodayEvents from '../TodayEvents';
-import UserName from '../../containers/UserName';
 import WeekEvents from '../WeekEvents';
 
 const App = () => {
@@ -32,7 +32,7 @@ const App = () => {
               </div>
               
               <div className=" auth authentificated">
-                < Loggedout/>
+              
               </div>
            </div>
                    

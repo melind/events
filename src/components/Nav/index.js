@@ -16,7 +16,7 @@ const Nav = () => {
     const dark = (value: any) => {
 
                setTheme(value  ? 'dark' : 'light');    
-               const menu = document.getElementsByClassName('ant-menu')[0] as HTMLElement ;
+               const menu = document.getElementsByClassName('ant-menu')[0] ;
 
                const body = document.body;
                body.classList.toggle('dark');

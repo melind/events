@@ -12,7 +12,7 @@ const EventInfo = (props) => {
     async function eventDetails() {  
 
        const details = await API.get('eventapi', `/${eventName}/${idEvent}`)
-      conole.log('details ',details)
+      console.log('details ',details)
        setEvents(details.data.eventsInfo);
        
        }
