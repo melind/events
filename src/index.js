@@ -4,12 +4,13 @@ import { BrowserRouter as Router } from 'react-router-dom';
 //import { Provider } from "react-redux";
 import './index.css' 
 import App from './components/App';
+import reportWebVitals from './reportWebVitals';
 
 import Amplify from 'aws-amplify';
 import config from './aws-exports';
 Amplify.configure(config);
 
-import reportWebVitals from './reportWebVitals';
+
 
 const ComponentToRender = () => (
  

@@ -8,7 +8,6 @@ See the License for the specific language governing permissions and limitations 
 
 
 /* Amplify Params - DO NOT EDIT
-	AUTH_COGNITO567AC464_USERPOOLID
 	ENV
 	REGION
 Amplify Params - DO NOT EDIT */
@@ -55,6 +54,7 @@ app.get('/:location/week', function(req, res) {
    let location = "portugal";
  /*--------------get api key and the url of the  external api -------------------*/
         const API_KEY = process.env.API_KEY;
+         console.log('param ',req.apiGateway.event.queryStringParameters, req.params)
         //event of the day
          let weekEventsUrl = `http://api.eventful.com/json/events/search?app_key=${API_KEY}&location=${location}&date=this+week`;
        if(req.apiGateway && req.apiGateway.event.queryStringParameters) {
@@ -71,7 +71,7 @@ app.get('/:location/week', function(req, res) {
 
 
 app.get('/description/:eventName/:idEvent', function(req, res) {
-     let idEvent;
+     let idEvent = req.params.idEvent;
   /*--------------get api key and the url of the  external api -------------------*/
         const API_KEY = process.env.API_KEY;
         //event of the day
