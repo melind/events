@@ -10,7 +10,7 @@ import config from './aws-exports';
 Amplify.configure(config);
 
 import reportWebVitals from './reportWebVitals';
-import store from './store';
+
 const ComponentToRender = () => (
  
         <Router>

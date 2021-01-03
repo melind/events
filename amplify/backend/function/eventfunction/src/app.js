@@ -30,9 +30,6 @@ app.use(function(req, res, next) {
 });
 
 
-/**********************
- * Example get method *
- **********************/
 
 app.get('/:location/today', function(req, res) {
    let location = "portugal";
