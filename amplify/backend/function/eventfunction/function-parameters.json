@@ -1,0 +1,12 @@
+{
+    "permissions": {
+        "auth": {
+            "cognito567ac464": [
+                "create",
+                "read",
+                "update",
+                "delete"
+            ]
+        }
+    }
+}

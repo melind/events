@@ -48,7 +48,6 @@ app.get('/:location/today', function(req, res) {
             .catch(err => { res.json({error: err}) });
         
 
- //res.json({success: 'get call succeed!', url: req.url, todayEvents});
 });
 
 app.get('/:location/today/*', function(req, res) {
@@ -56,47 +55,6 @@ app.get('/:location/today/*', function(req, res) {
   res.json({success: 'get call succeed!', url: req.url});
 });
 
-/****************************
-* Example post method *
-****************************/
-
-app.post('/:location/today', function(req, res) {
-  // Add your code here
-  res.json({success: 'post call succeed!', url: req.url, body: req.body})
-});
-
-app.post('/:location/today/*', function(req, res) {
-  // Add your code here
-  res.json({success: 'post call succeed!', url: req.url, body: req.body})
-});
-
-/****************************
-* Example put method *
-****************************/
-
-app.put('/:location/today', function(req, res) {
-  // Add your code here
-  res.json({success: 'put call succeed!', url: req.url, body: req.body})
-});
-
-app.put('/:location/today/*', function(req, res) {
-  // Add your code here
-  res.json({success: 'put call succeed!', url: req.url, body: req.body})
-});
-
-/****************************
-* Example delete method *
-****************************/
-
-app.delete('/:location/today', function(req, res) {
-  // Add your code here
-  res.json({success: 'delete call succeed!', url: req.url});
-});
-
-app.delete('/:location/today/*', function(req, res) {
-  // Add your code here
-  res.json({success: 'delete call succeed!', url: req.url});
-});
 
 app.listen(3000, function() {
     console.log("App started")

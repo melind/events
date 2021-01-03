@@ -9,6 +9,20 @@
 			"build": true,
 			"providerPlugin": "awscloudformation",
 			"service": "Lambda"
+		},
+		"eventfunction": {
+			"build": true,
+			"providerPlugin": "awscloudformation",
+			"service": "Lambda",
+			"dependsOn": [
+				{
+					"category": "auth",
+					"resourceName": "cognito567ac464",
+					"attributes": [
+						"UserPoolId"
+					]
+				}
+			]
 		}
 	},
 	"auth": {
@@ -33,6 +47,20 @@
 				{
 					"category": "function",
 					"resourceName": "ewwtodayevent",
+					"attributes": [
+						"Name",
+						"Arn"
+					]
+				}
+			]
+		},
+		"eventapi": {
+			"service": "API Gateway",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": [
+				{
+					"category": "function",
+					"resourceName": "eventfunction",
 					"attributes": [
 						"Name",
 						"Arn"

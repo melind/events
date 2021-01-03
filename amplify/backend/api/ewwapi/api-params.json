@@ -23,6 +23,20 @@
             "privacy": {
                 "open": true
             }
+        },
+        {
+            "name": "/{location}/week",
+            "lambdaFunction": "ewwtodayevent",
+            "privacy": {
+                "open": true
+            }
+        },
+        {
+            "name": "/description/{eventName}/{idEvent}",
+            "lambdaFunction": "ewwtodayevent",
+            "privacy": {
+                "open": true
+            }
         }
     ],
     "resourceName": "ewwapi",
@@ -58,5 +72,6 @@
                 "Arn"
             ]
         }
-    ]
+    ],
+    "uuid": "18b24cd5"
 }
