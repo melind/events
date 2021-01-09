@@ -16,7 +16,15 @@
                 "cognito567ac464": {}
             },
             "function": {
-                "eventfunction": {}
+                "eventfunction": {},
+                "cognito567ac464PostConfirmation": {
+                    "GROUP": "Admin"
+                },
+                "cognito567ac464CustomMessage": {
+                    "REDIRECTURL": "http://localhost:3000/authentification",
+                    "EMAILSUBJECT": "",
+                    "EMAILMESSAGE": ""
+                }
             }
         }
     },
