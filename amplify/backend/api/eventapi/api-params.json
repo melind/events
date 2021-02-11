@@ -1,0 +1,48 @@
+{
+    "paths": [
+        {
+            "name": "/{location}/today",
+            "lambdaFunction": "eventfunction",
+            "privacy": {
+                "open": true
+            }
+        },
+        {
+            "name": "/{location}/week",
+            "lambdaFunction": "eventfunction",
+            "privacy": {
+                "open": true
+            }
+        },
+        {
+            "name": "/description/{eventName}/{idEvent}",
+            "lambdaFunction": "eventfunction",
+            "privacy": {
+                "open": true
+            }
+        }
+    ],
+    "resourceName": "eventapi",
+    "apiName": "eventapi",
+    "functionArns": [
+        {
+            "lambdaFunction": "eventfunction"
+        }
+    ],
+    "privacy": {
+        "auth": 0,
+        "unauth": 0,
+        "authRoleName": "amplify-eww-prod-02145-authRole",
+        "unAuthRoleName": "amplify-eww-prod-02145-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "eventfunction",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ]
+}
