@@ -68,7 +68,7 @@
 				"Timeout": "25",
 				"Code": {
 					"S3Bucket": "amplify-eww-prod-02145-deployment",
-					"S3Key": "amplify-builds/eventfunction-5534664358396c596751-build.zip"
+					"S3Key": "amplify-builds/eventfunction-52706730736b32526359-build.zip"
 				}
 			}
 		},

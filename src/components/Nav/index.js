@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
-import { Menu,  Switch, Input, Button } from 'antd';
+import { Menu,  Switch } from 'antd';
 
 import './index.css';
 

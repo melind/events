@@ -30,7 +30,7 @@ const EventInfo = (props) => {
                     { events['title'] } {events['start_time']} {events['city']} {events['region']}
                     {events['description']} 
                     
-                    {events['links'] && events['links']["link"].map((result) => <div key={result.id}> <a href={`${result.url}`} target="_blank">Billeterie</a></div>)}
+                    {events['links'] && events['links']["link"].map((result) => <div key={result.id}> <a href={`${result.url}`} target="_blank" rel="noreferrer">Billeterie</a></div>)}
                     
 
                  </div>

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import {Link} from 'react-router-dom';
 import {API} from 'aws-amplify';
-import { Menu,  Switch, Input, Button } from 'antd';
+import { Input, Button } from 'antd';
 
 const TodayEvents = () => {
     
