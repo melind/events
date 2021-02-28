@@ -1,24 +1,68 @@
 .nav {
-    border: yellow solid 2px;
-    /*width: 100%;
-    display: flex;
-    justify-content: space-around;
-    /*flex-direction: row;*/
+    width: 100w;
+    /*border: blue solid 2px;*/
+    
 }
-.menu {
-    display: flex;
-    justify-content: space-between;
-    font-weight: bold;
-   /* text-shadow: 1px 1px 2px yellow, 0 0 1em, 0 0 0.2em white;
-    /*color : #047b27;*/
+.nav a {
+  text-decoration: none;
+  color: #c0185b;
+}
+#webgl{
+ /* border: green solid 2px;*/
+}
+.brand-name {
+  /*border: green solid 2px;*/
+   
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+
+@media screen and (max-width: 375px) {
+  .brand-name  {
+    justify-content: center;
+  }
+}
+.authentification {
+  /*border: green solid 2px;*/
+  padding-right: 10px;
+  display: flex;
+  font-size: 12px;
+}
+
+.authentificated {
+  /*border: blue solid 2px;*/
+  display: flex;
+  flex-direction: column;
+}
+
+.auth {
+  display: none;
+}
+.un {
+  display: block;
+}
+.accueil {
+
+}
+.nav-onglet {
+ text-align: left;
+ font-size: 14px;
 }
 .dark {
   background-color: /*#1f262d*/ #001529;
   color : white;
   transition-delay: 0.1s;
 }
-/*
-.ant-menu-horizontal > .ant-menu-item > a{
-  color : #047b27;
+.switch {
+  
+  border: none;
+  background-color: white;
 }
-*/
+.switch :active {
+  
+  border: none;
+  background-color: white;
+}

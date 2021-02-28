@@ -4,19 +4,19 @@ import SignIn from '../SignIn';
 import SignUp from '../SignUp';
 import ForgotPassword from '../ForgotPassword';
 import ForgotPasswordSubmit from '../ForgotPasswordSubmit';
+import background from './images/map1.jpg';
+import './index.css';
 
 const initialFormState = {
   username: '', password: '', email: '', confirmationCode: ''
 }
 
 async function signUp({ username, password }, updateFormType) {
-    console.log("form : ", username, password, updateFormType)
     let email = username
   try {
     await Auth.signUp({
       username, password, attributes: { email }
     })
-    console.log('sign up success!')
     updateFormType('signIn')
   } catch (err) {
       if (err.name && err.name === 'UsernameExistsException') {
@@ -28,6 +28,13 @@ async function signUp({ username, password }, updateFormType) {
       if(err.message && err.message === '1 validation error detected: Value at \'password\' failed to satisfy constraint: Member must have length greater than or equal to 6') {
         alert('Mot de passe pas assez long.')
       }
+      if(err.message && err.message === 'Password did not conform with policy: Password must have uppercase characters') {
+        alert('Le mot de passe doit contenir une majuscule')
+      }
+      if(err.message && err.message === 'Password did not conform with policy: Password must have numeric characters') {
+        alert('Le mot de passe doit contenir un chiffre')
+      }
+      
     console.log('error signing up..', err)
   }
 }
@@ -41,7 +48,10 @@ async function signIn({ email, password }, setUser) {
     window.location.href="http://localhost:3000/";
     }
   } catch (err) {
-    console.log('error signing up..', err)
+    if (err.name && err.name === 'NotAuthorizedException') {
+          alert('Nom d\'utilisateur ou mot de passe incorrect' )
+          }
+    console.log('error signing in..', err)
   }
 }
 
@@ -65,6 +75,7 @@ async function forgotPasswordSubmit({ username, confirmationCode, password }, up
     console.log('error updating password... :', err)
   }
 }
+
 
 function Form(props) {
   const [formType, updateFormType] = useState('signIn')
@@ -106,6 +117,7 @@ function Form(props) {
             updateFormState={e => updateForm(e)}
           />
         )
+
      default:
         return null
     }
@@ -113,7 +125,7 @@ function Form(props) {
   
 
   return (
-    <div>
+    <div className="form">
       {renderForm()}
       {
         formType === 'signUp' && (
@@ -150,9 +162,15 @@ const styles = {
   container: {
     display: 'flex',
     flexDirection: 'column',
-    marginTop: 150,
+    marginTop: 50,
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+    backgroundImage: 'url( '+background+')',
+    backgroundSize: 500, 
+    backgroundPosition: 'center',
+    width: window.width,
+    height: window.height,
+    color: 'black'
   },
   input: {
     height: 45,
@@ -177,7 +195,7 @@ const styles = {
     marginTop: '5px',
   },
   anchor: {
-    color: '#006bfc',
+    color: '#b075e7',
     cursor: 'pointer'
   }
 }

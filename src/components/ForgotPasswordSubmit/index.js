@@ -15,11 +15,11 @@ function ForgotPasswordSubmit(props) {
         name='username'
         onChange={e => {e.persist();props.updateFormState(e)}}
         style={styles.input}
-        placeholder='username'
+        placeholder='email'
       />
       <input
         name='password'
-        placeholder='New password'
+        placeholder='Nouveau mot de passe'
         type='password'
         onChange={e => {e.persist();props.updateFormState(e)}}
         style={styles.input}

@@ -17,7 +17,7 @@
 
 .App-header {
   
-  /*min-height: 100vh;*/
+  /*min-height: 100vh;
   border: black solid 2px;
   font-family: 'Curlz MT';
   /*position: absolute;
@@ -32,28 +32,7 @@
 }
 
 .brand-header {
-  border: red solid 2px;
-  display: flex;
-  justify-content: space-between;
-}
-.brand-name {
-  border: green solid 2px;
-}
-.authentification {
-  border: green solid 2px;
-  display: flex;
-  font-size: 12px;
-}
-
-.authentificated {
-  border: blue solid 2px;
-  display: flex;
-  flex-direction: column;
-}
-
-.auth {
-  display: none;
-}
-.un {
-  display: block;
+  /*border: red solid 2px;
+   display: flex;
+  justify-content: space-between;*/
 }

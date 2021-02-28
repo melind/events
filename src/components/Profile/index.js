@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react'
-import { Button } from 'antd'
-import { Auth, Hub } from 'aws-amplify'
-//import Container from './Container'
-import Form from '../Form'
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { Auth, Hub } from 'aws-amplify';
+import Form from '../Form';
 
 function Profile() {
   
@@ -27,9 +26,10 @@ function Profile() {
    if (user) {
   
     return (
-     <div>
+     <div className="profile">
         <h1>Profile</h1>
-        <h3>Email: {user.email}</h3>
+        <p>Email: {user.email}<Link to="/modification-email"> Modifier </Link ></p> 
+        <Link to="/modification-mot-de-passe"> Changer de mot de passe </Link >
     </div>
     );
 

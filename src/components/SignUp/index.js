@@ -18,7 +18,7 @@ function SignUp({ updateFormState, signUp }) {
         style={styles.input}
         placeholder='password'
       />
-     
+      <p>Mot de passe doit contenir : minuscule, majuscule, chiffre</p>
       <Button onClick={signUp} title="Sign Up" />
       
     </div>

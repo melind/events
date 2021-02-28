@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import {Link} from 'react-router-dom';
 import {API} from 'aws-amplify';
 import { Input, Button } from 'antd';
+import './index.css';
 
 const TodayEvents = () => {
     
