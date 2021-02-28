@@ -4,7 +4,7 @@ const Home = () => {
 
     return (
         <div className="home">
-        <p>Liste des évènements de culturelles à travers le monde. Année 2021 <p/>
+        <p>Liste des évènements culturels à travers le monde. Année 2021 <p/>
         <div className="map"><iframe frameborder="0" src="https://public.opendatasoft.com/map/embed/evenements_a_travers_le_monde/?&static=false&scrollWheelZoom=true"></iframe></div>
         
       
