@@ -60,7 +60,7 @@ const NewPaswword = () => {
        }
     const handleSubmit = (e) => {
             changePassword(formState);
-            
+            window.location.replace(URL||"https://events-world-wide.fr/profile");
           }
   return (
     <div style={styles.container}>

@@ -10,6 +10,7 @@ import './index.css';
 const initialFormState = {
   username: '', password: '', email: '', confirmationCode: ''
 }
+const URL = process.env.REACT_APP_URL;
 
 async function signUp({ username, password }, updateFormType) {
     let email = username
@@ -45,7 +46,7 @@ async function signIn({ email, password }, setUser) {
     const user = await Auth.signIn(email, password)
 
     if(user) { 
-    window.location.href="http://localhost:3000/";
+    window.location.replace(URL||"https://events-world-wide.fr/");
     }
   } catch (err) {
     if (err.name && err.name === 'NotAuthorizedException') {

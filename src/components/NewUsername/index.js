@@ -80,7 +80,7 @@ const NewUsername = () => {
 
   const handleSubmitConfirm = (e) => {
           changeUserNameConfirm(formState);
-          window.location.replace(URL||"events-world-wide.fr/profile");
+          window.location.replace(URL||"https://events-world-wide.fr/profile");
 
   }
    const code = (e) => {
