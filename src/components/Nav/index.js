@@ -169,17 +169,7 @@ const [user, setUser] = useState(null)
     
   }, [])
 
-    const [theme, setTheme] = useState(null);
- 
-  
    
-    const dark = (value: any) => {
-
-               setTheme(value  ? 'dark' : 'light');               
-               const body = document.body;
-               body.classList.toggle('dark');
-               
-       };
 
    
     
@@ -204,11 +194,7 @@ const [user, setUser] = useState(null)
            </div>
            <div className="nav-onglet">
                  
-                   <Switch className="switch"
-                             onChange={dark}
-                             checkedChildren="Dark"
-                             unCheckedChildren="Light"
-                   /> 
+                  
 
                    <Link to="/" className="accueil"> Accueil </Link>
 
